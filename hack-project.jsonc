@@ -1,0 +1,10 @@
+{ 
+    // nombre de su producto / solución
+    "project_name": "anomala",
+    // descripción de una frase y directa al grano de la solución
+    "oneliner": "🚀 Anomala, the 1000 Eyes hacker cacher",
+    // url al logo de proyecto. mínimo 200x200, png. puede estar hosteado en el mismo repo.
+    "logo_url": "https://github.com/user-attachments/assets/8ab67fe9-209e-4230-bc02-1e2b877c60d0",
+    // url para acceder a su app. si es apk u otro, link de descarga directa.
+    "app_url": "https://github.com/platanus-hack/team-13/blob/master/README.md"
+}
