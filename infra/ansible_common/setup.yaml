@@ -1,0 +1,9 @@
+---
+- name: Install Docker
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+
+  roles:
+    - docker_install
+

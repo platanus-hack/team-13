@@ -1,0 +1,32 @@
+FROM python:3.12-alpine
+
+# Set environment variables for Poetry
+ENV POETRY_VERSION=1.8.3 \
+    POETRY_VIRTUALENVS_CREATE=false \
+    POETRY_NO_INTERACTION=1 \
+    PYTHONPATH=/app \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Install dependencies including curl for healthcheck
+RUN apk add --no-cache bash curl gcc musl-dev libffi-dev postgresql-dev
+
+# Install Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 - && \
+    ln -s /root/.local/bin/poetry /usr/local/bin/poetry
+
+WORKDIR /app
+
+# Copy all files first
+COPY . .
+
+# Make entrypoint script executable
+RUN chmod +x entrypoint.sh
+
+# Install dependencies
+RUN poetry install
+
+EXPOSE 8000
+
+# Set entrypoint
+ENTRYPOINT ["./entrypoint.sh"]

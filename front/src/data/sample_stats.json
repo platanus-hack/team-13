@@ -1,0 +1,10 @@
+{
+    "total_attacks": 2847,
+    "total_blocked": 1963,
+    "types_of_attacks": {
+        "sql_injection": 45,
+        "xss": 30,
+        "phishing": 15,
+        "unknown": 10
+    }
+}
